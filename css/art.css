@@ -1,0 +1,42 @@
+/* Art page specific styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Art image - full width, touches top */
+.art-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: block;
+    z-index: -1;
+}
+
+/* Make header overlay the image */
+.content-wrapper {
+    position: relative;
+}
+
+/* Keep header styling identical to index */
+.main-header {
+    background-color: transparent;
+}
+
+/* Ensure content is scrollable */
+body {
+    overflow-y: auto;
+    min-height: 100vh;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .art-image {
+        width: 100%;
+        height: auto;
+    }
+}

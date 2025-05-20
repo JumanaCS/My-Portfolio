@@ -1,0 +1,166 @@
+/* ===== BASE STYLES ===== */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* ===== BACKGROUND ===== */
+  .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .apps-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* ===== HEADER ===== */
+  .main-header {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    padding: 15px 0;
+  }
+  
+  /* ===== BUTTONS CONTAINER ===== */
+  .apps-container {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(20px, 8vw, 100px);
+    box-sizing: border-box;
+  }
+  
+  .app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 4vw, 40px);
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  /* ===== BUTTON ROWS ===== */
+  .button-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: clamp(20px, 4vw, 40px);
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  /* ===== BASE BUTTON STYLES ===== */
+  .app-button {
+    transition: all 0.3s ease;
+    flex: 0 1 auto;
+    margin: 0 clamp(10px, 3vw, 30px);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4vw;
+  }
+  
+  .app-button:hover {
+    transform: scale(1.05) translateY(-5px);
+  }
+  
+  .app-button img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* ===== INDIVIDUAL BUTTON SIZING ===== */
+  #scholarup-btn {
+    --btn-width: min(40vw, 360px);
+    width: var(--btn-width);
+    min-width: var(--btn-width);
+    transform: rotate(-2deg);
+    margin-bottom: 6vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+  
+  #cosmic-btn {
+    --btn-width: min(42vw, 360px);
+    width: var(--btn-width);
+    min-width: var(--btn-width);
+    margin-bottom: 6vw;
+  }
+  
+  #ella-btn {
+    --btn-width: min(65vw, 340px);
+    width: var(--btn-width);
+    min-width: var(--btn-width);
+    padding: 5px;
+    margin-left: 9vw;
+  }
+  
+  /* ===== INDIVIDUAL HOVER STATES ===== */
+  #scholarup-btn:hover {
+    transform: rotate(-2deg) scale(1.08);
+  }
+  
+  
+  /* ===== RESPONSIVE ADJUSTMENTS ===== */
+  @media (max-width: 1024px) {
+    #scholarup-btn { --btn-width: min(45vw, 320px); }
+    #cosmic-btn { --btn-width: min(45vw, 340px); }
+    #ella-btn { --btn-width: min(70vw, 450px); }
+  }
+  
+  @media (max-width: 768px) {
+    .apps-container {
+      padding: 0 clamp(15px, 5vw, 40px);
+      min-height: calc(100vh - 70px);
+    }
+    
+    .button-row {
+      justify-content: center;
+    }
+    
+    .app-button {
+      margin: 0 clamp(5px, 2vw, 20px);
+    }
+    
+    #scholarup-btn,
+    #cosmic-btn {
+      --btn-width: min(80vw, 380px);
+    }
+    
+    #ella-btn {
+      --btn-width: min(85vw, 420px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .apps-container {
+      padding: 0 10px;
+    }
+    
+    .app-button {
+      margin: 0 5px;
+    }
+    
+    #scholarup-btn,
+    #cosmic-btn,
+    #ella-btn {
+      --btn-width: 90vw;
+    }
+    
+    .app-button img {
+      border-radius: 8px;
+    }
+  }

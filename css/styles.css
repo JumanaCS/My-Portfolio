@@ -1,0 +1,311 @@
+/* Reset and base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Custom font */
+@font-face {
+    font-family: 'BarberChop';
+    src: url('../images/BarberChop.otf') format('opentype');
+    font-display: swap;
+}
+
+/* Full-screen background */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/back1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Content wrapper */
+.content-wrapper {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Header */
+.main-header {
+    width: 100%;
+    padding: 1vw 0;
+    box-sizing: border-box;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 3vw;
+    padding: 0 5vw;
+}
+
+/* Text navigation buttons */
+.nav-button {
+    transition: all 0.3s ease;
+    font-family: 'BarberChop', sans-serif;
+    font-size: clamp(16px, 1.8vw, 28px);
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0vw 1.8vw;
+}
+
+/* Special spacing for end buttons */
+.nav-buttons > a:first-child {
+    margin-right: auto;
+    padding-left: 2vw;
+}
+
+.nav-buttons > a:last-child {
+    margin-left: auto;
+    padding-right: 10vw;
+}
+
+/* Center image logo button */
+.logo-button {
+    transition: transform 0.3s ease;
+    padding: 0 2vw;
+}
+
+.logo-button img {
+    height: clamp(20px, 3.5vw, 60px);
+    width: auto;
+    display: block;
+}
+
+/* Hover effects */
+.nav-button:hover {
+    color: rgba(255,255,255,0.7);
+}
+
+.logo-button:hover {
+    transform: scale(1.05);
+}
+
+/* Image buttons section - matching header scaling */
+.image-buttons-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2vw 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.image-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 3vw;
+    padding: 0 5vw;
+}
+
+.first-row {
+    margin-bottom: 0vw;
+}
+
+.image-button {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 20;
+}
+
+.image-button img {
+    display: block;
+    height: auto;
+}
+
+/* Tall overlay image */
+.tall-overlay {
+    position: absolute;
+    right: 4vw;
+    top: 10vh;
+    z-index: 100; /* Increased to ensure it's above everything */
+    height: 90vh;
+    width: auto;
+    max-width: 30vw;
+    pointer-events: none; /* Allows clicks to pass through to buttons */
+}
+
+/* Individual image buttons with margins */
+#s1-btn img {  /* Apps */
+    width: clamp(200px, 27vw, 400px);
+    margin-left: clamp(100px, 2vw, 200px);
+}
+#s2-btn img { /* About Me */
+    width: clamp(140px, 25vw, 360px);
+    margin-left: clamp(70px, 1.5vw, 170px);
+    margin-right: clamp(70px, 1.5vw, 170px);
+    margin-top: clamp(5px, 1vw, 15px);
+}
+#s3-btn img { /* Passion */
+    width: clamp(150px, 20vw, 230px);
+    margin-left: clamp(5px, 1vw, 20px);
+}
+#s4-btn img { /* Contact */
+    width: clamp(120px, 22vw, 290px);
+    margin-right: clamp(10px, 2vw, 30px);
+    margin-bottom: 2vw;
+}
+#s5-btn img { /* Art */
+    width: clamp(120px, 22vw, 300px);
+    margin-left: clamp(100px, 2vw, 200px);
+    margin-bottom: -2vw;
+}
+
+/* Keep existing hover effects */
+.image-button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-buttons {
+        gap: 1vw;
+        padding: 0 1vw;
+    }
+    
+    .nav-button {
+        font-size: clamp(10px, 2vw, 16px);
+    }
+    
+    .nav-buttons > a:first-child {
+        padding-left: 7vw;
+    }
+    
+    .nav-buttons > a:last-child {
+        padding-right: 7vw;
+    }
+    
+    .logo-button img {
+        height: clamp(20px, 5vw, 40px);
+    }
+    
+    /* Image buttons adjustments */
+    .image-row {
+        gap: 1vw;
+        padding: 0 1vw;
+    }
+    
+    #s1-btn img { width: clamp(150px, 25vw, 300px); }
+    #s2-btn img { width: clamp(120px, 23vw, 280px); }
+    #s3-btn img { width: clamp(100px, 20vw, 250px); }
+    #s4-btn img { width: clamp(90px, 18vw, 220px); }
+    #s5-btn img { width: clamp(90px, 18vw, 220px); }
+    
+    /* Overlay adjustments */
+    .tall-overlay {
+        height: 40vh;
+        top: 15vh;
+        right: 3vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-buttons {
+        gap: 1.5vw;
+        padding: 0 3vw;
+    }
+    
+    .nav-button {
+        font-size: clamp(12px, 3vw, 16px);
+    }
+    
+    .nav-buttons > a:first-child {
+        padding-left: 1vw;
+    }
+    
+    .nav-buttons > a:last-child {
+        padding-right: 1vw;
+    }
+    
+    .logo-button img {
+        height: clamp(20px, 6vw, 30px);
+    }
+    
+    .main-header {
+        padding: 5vw 0;
+    }
+    
+    /* Image buttons mobile adjustments */
+    .image-row {
+        flex-wrap: nowrap;
+        gap: 1.5vw;
+        padding: 0 3vw;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .image-button img {
+        max-height: 120px;
+    }
+    
+    #s1-btn img { width: clamp(100px, 30vw, 200px); }
+    #s2-btn img { width: clamp(80px, 28vw, 180px); }
+    #s3-btn img { width: clamp(70px, 25vw, 160px); }
+    #s4-btn img { width: clamp(60px, 23vw, 140px); }
+    #s5-btn img { width: clamp(60px, 23vw, 140px); }
+    
+    /* Hide scrollbar but keep functionality */
+    .image-row::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Overlay adjustments for mobile */
+    .tall-overlay {
+        height: 30vh;
+        top: 12vh;
+        right: 2vw;
+    }
+}
+
+@media (max-width: 1200px) {
+    .tall-overlay {
+        height: 55vh;
+        top: 18vh;
+    }
+}
+
+@media (max-width: 992px) {
+    .tall-overlay {
+        height: 50vh;
+        top: 16vh;
+        right: 4vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .tall-overlay {
+        height: 45vh;
+        top: 14vh;
+        right: 3vw;
+        max-width: 35vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .tall-overlay {
+        height: 40vh;
+        top: 12vh;
+        right: 2vw;
+        max-width: 40vw;
+    }
+}
