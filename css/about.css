@@ -1,11 +1,10 @@
-/* Art page specific styles */
 body, html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-/* Art image - full width, touches top */
+/* Art image */
 .art-image {
     position: absolute;
     top: 0;
@@ -17,17 +16,14 @@ body, html {
     z-index: -1;
 }
 
-/* Make header overlay the image */
 .content-wrapper {
     position: relative;
 }
 
-/* Keep header styling identical to index */
 .main-header {
     background-color: transparent;
 }
 
-/* Ensure content is scrollable */
 body {
     overflow-y: auto;
     min-height: 100vh;
